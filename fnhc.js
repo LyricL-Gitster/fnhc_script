@@ -1,8 +1,41 @@
+var selectContainsOption = function(selectNode, text){
+	var foundOptions = [];
+	var selectOptions = selectNode.options;
+	var o;
+	for (i = 0; i < selectOptions.length; i++) {
+		o = selectOptions[i];
+		if(o.text == text){
+			foundOptions.push(o);
+		}
+	}
+	return foundOptions;
+};
 
 $(document).ready(function(){
 	// remove names from the dropdown
-	$.each(['test test','Dave Ducane','Rob Vaillencourt','Dan Martin',"Dave's Friend2"],function(){
-		$("select[name='playerid'] option:contains("+this+')').remove();
+	[
+		'test test',
+		'Dave Ducane',
+		'Rob Vaillencourt',
+		'Dan Martin',
+		"Dave's Friend2"
+	].forEach(function(name){
+		var options = selectContainsOption($("select[name='playerid']")[0], name);
+		options.forEach(function(o){ o.remove(); });
+	});
+
+	// disable "Sign Up" if player blacklisted
+	[
+		'David Moser',
+	].forEach(function(name){
+		var badOptions = selectContainsOption($("select[name='playerid']")[0], name);
+
+		if(badOptions.length > 0){
+			$("select[name='playerid']").outerHTML = "<strong>BLACKLISTED</strong>";
+			$("select[name='waitplayerid']").outerHTML = "<strong>BLACKLISTED</strong>";
+			$("input[name='addplayertoskatetime']").disabled = true;
+			$("input[name='addplayertowaitlist']").disabled = true;
+		}
 	});
 
 	// add FNHC banner
