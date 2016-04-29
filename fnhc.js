@@ -20,7 +20,9 @@ $(document).ready(function(){
 		'Dan Martin',
 		"Dave's Friend2"
 	].forEach(function(name){
-		var options = selectContainsOption($("select[name='playerid']")[0], name);
+		var $select = $("select[name='playerid']");
+		if($select.length == 0){return null;}
+		var options = selectContainsOption($select[0], name);
 		options.forEach(function(o){ o.remove(); });
 	});
 
@@ -28,7 +30,9 @@ $(document).ready(function(){
 	[
 		'David Moser',
 	].forEach(function(name){
-		var badOptions = selectContainsOption($("select[name='playerid']")[0], name);
+		var $select = $("select[name='playerid']");
+		if($select.length == 0){return null;}
+		var badOptions = selectContainsOption($select[0], name);
 
 		if(badOptions.length > 0){
 			$("select[name='playerid']").outerHTML = "<strong>BLACKLISTED</strong>";
