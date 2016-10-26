@@ -29,6 +29,7 @@ $(document).ready(function(){
 	// disable "Sign Up" if player blacklisted
 	[
 		'David Moser',
+		'Rob Vaillencourt',
 	].forEach(function(name){
 		var $select = $("select[name='playerid']");
 		if($select.length == 0){return null;}
