@@ -30,6 +30,8 @@ $(document).ready(function(){
 	[
 		'David Moser',
 		'Rob Vaillencourt',
+		'Brooks Dibeler',
+		'Josh Buck',
 	].forEach(function(name){
 		var $select = $("select[name='playerid']");
 		if($select.length == 0){return null;}
