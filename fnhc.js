@@ -14,11 +14,11 @@ var selectContainsOption = function(selectNode, text){
 $(document).ready(function(){
 	// remove names from the dropdown
 	[
-		'test test',
-		'Dave Ducane',
-		'Rob Vaillencourt',
 		'Dan Martin',
-		"Dave's Friend2"
+		'Dave Ducane',
+		'Dave\'s Friend2',
+		'Rob Vaillencourt',
+		'test test',
 	].forEach(function(name){
 		var $select = $("select[name='playerid']");
 		if($select.length == 0){return null;}
@@ -28,10 +28,16 @@ $(document).ready(function(){
 
 	// disable "Sign Up" if player blacklisted
 	[
-		'David Moser',
-		'Rob Vaillencourt',
 		'Brooks Dibeler',
+		'David Moser',
+		'Dustin Lind',
 		'Josh Buck',
+		'Karl Ness',
+		'Luke Voltin',
+		'Mike Good',
+		'Rob Vaillencourt',
+		'Shawn Gralish',
+		'Tommy Valento',
 	].forEach(function(name){
 		var $select = $("select[name='playerid']");
 		if($select.length == 0){return null;}
