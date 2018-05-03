@@ -28,6 +28,7 @@ $(document).ready(function(){
 
 	// disable "Sign Up" if player blacklisted
 	[
+		'Arthur Clark',
 		'Brooks Dibeler',
 		'David Moser',
 		'Dustin Lind',
