@@ -47,10 +47,14 @@ $(document).ready(function(){
 		var badOptions = selectContainsOption($select[0], name);
 
 		if(badOptions.length > 0){
-			$("select[name='playerid']").outerHTML = "<strong>BLACKLISTED</strong>";
-			$("select[name='waitplayerid']").outerHTML = "<strong>BLACKLISTED</strong>";
-			$("input[name='addplayertoskatetime']").disabled = true;
-			$("input[name='addplayertowaitlist']").disabled = true;
+			var title = 'Contact the commish to be removed from the blacklist';
+			var newHtml = "<strong title='" + title + "'>BLACKLISTED</strong>";
+			$("select[name='playerid']").replaceWith(newHtml);
+			$("select[name='waitplayerid']").replaceWith(newHtml);
+			$("input[name='addplayertoskatetime']").attr('disabled', true);
+			$("input[name='addplayertoskatetime']").attr('title', title);
+			$("input[name='addplayertowaitlist']").attr('disabled', true);
+			$("input[name='addplayertowaitlist']").attr('title', title);
 		}
 	});
 
