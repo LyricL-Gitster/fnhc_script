@@ -37,7 +37,6 @@ $(document).ready(function(){
 		'Kory Zasadzinski',
 		'Luke Voltin',
 		'Mike Good',
-		'Nick Fossum',
 		'Rob Vaillencourt',
 		'Shawn Gralish',
 		'Tommy Valento',
